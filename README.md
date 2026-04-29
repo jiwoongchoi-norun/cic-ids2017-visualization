@@ -40,33 +40,71 @@ load_data -> preprocess -> analysis -> visualize
 - `Destination Port` 기준 상위 10개 포트 확인
 - 결과를 bar chart로 시각화
 
-## 6. 실행 방법
+## 6. 실행 방법: 로컬 실행
 
-가상환경의 Python을 사용합니다.
+venv 기준으로 실행합니다.
+
+1. 프로젝트 폴더로 이동합니다.
+
+```bash
+cd /home/choijiwng/projects/cic-ids2017-visualization
+```
+
+2. 패키지를 설치합니다.
+
+```bash
+.venv/bin/pip install -r requirements.txt
+```
+
+3. 데이터 로드를 확인합니다.
 
 ```bash
 .venv/bin/python src/load_data.py
 ```
 
+4. 전처리를 확인합니다.
+
 ```bash
 .venv/bin/python src/preprocess.py
 ```
+
+5. 분석 결과를 출력합니다.
 
 ```bash
 .venv/bin/python src/analysis.py
 ```
 
-```bash
-.venv/bin/python src/visualize.py
-```
-
-전체 분석 결과와 그래프 저장까지 확인하려면 아래 명령을 실행하면 됩니다.
+6. 그래프를 생성하고 저장합니다.
 
 ```bash
 .venv/bin/python src/visualize.py
 ```
 
-## 7. 결과 이미지 위치
+## 7. 실행 방법: Docker 실행
+
+Docker가 설치되어 있으면 아래 순서로 실행할 수 있습니다.
+
+1. 프로젝트 폴더로 이동합니다.
+
+```bash
+cd /home/choijiwng/projects/cic-ids2017-visualization
+```
+
+2. Docker 이미지를 빌드합니다.
+
+```bash
+docker build -t cic-ids2017-visualization .
+```
+
+3. 컨테이너를 실행합니다.
+
+```bash
+docker run --rm cic-ids2017-visualization
+```
+
+Docker 실행 시 기본으로 `src/visualize.py`가 실행됩니다.
+
+## 8. 결과 이미지 위치
 
 시각화 결과 이미지는 아래 폴더에 저장됩니다.
 
