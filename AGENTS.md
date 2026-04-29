@@ -41,3 +41,5 @@ Start with one CSV file first, not all.
 - Prefer local code and current project files first.
 - Do not call MCP for simple pandas/matplotlib code unless needed.
 - If using Context7, summarize only the relevant part briefly.
+
+For Codex workflow rules, refer to docs/codex_workflow.md.
