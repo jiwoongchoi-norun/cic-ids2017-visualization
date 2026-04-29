@@ -117,3 +117,46 @@ reports/figures/
 - `binary_label_distribution.png`
 - `attack_type_distribution.png`
 - `port_top10.png`
+
+## 9. 분석 결과
+
+### 1. 정상 vs 공격 비율
+- 공격 트래픽이 정상보다 높은 비율을 차지 (약 56%)
+- DDoS 공격 특성상 대량의 트래픽이 발생하기 때문
+
+### 2. 공격 유형 분포
+- DDoS 공격이 대부분을 차지
+- 일부 공격 유형은 데이터 수가 매우 적어 데이터 불균형 존재
+
+### 3. 포트 분포
+- 80, 53, 443 포트에 트래픽 집중
+- 웹 서비스 및 DNS 기반 공격 패턴 확인 가능
+
+### 4. 해석
+- DDoS 공격은 높은 패킷 수와 트래픽 속도를 특징으로 한다
+- 특정 포트와 트래픽 패턴을 통해 공격을 구분할 수 있다
+
+---
+
+## 10. 결과 시각화
+
+### Binary Label Distribution
+![binary](reports/figures/binary_label_distribution.png)
+
+### Binary Label (Pie)
+![pie](reports/figures/binary_label_pie.png)
+
+### Attack Type Distribution
+![attack](reports/figures/attack_type_distribution.png)
+
+### Top 10 Destination Ports
+![ports](reports/figures/port_top10.png)
+
+---
+
+## 11. 프로젝트에서 배운 점
+
+- 데이터 분석에서 전처리의 중요성을 이해하게 되었다
+- 단순한 시각화가 아니라 데이터의 의미를 해석하는 과정이 중요함을 배웠다
+- 네트워크 트래픽 패턴을 통해 공격 특성을 파악할 수 있었다
+- Docker를 통해 동일한 환경에서 실행 가능한 프로젝트를 구성할 수 있었다
