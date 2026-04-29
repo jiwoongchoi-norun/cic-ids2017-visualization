@@ -10,7 +10,13 @@ from analysis import run_analysis
 
 
 def plot_results():
-    binary_counts, attack_distribution, port_top10 = run_analysis()
+    (
+        binary_counts,
+        binary_percentages,
+        attack_distribution,
+        attack_percentages,
+        port_top10,
+    ) = run_analysis()
     output_dir = "reports/figures"
     os.makedirs(output_dir, exist_ok=True)
 
@@ -20,6 +26,17 @@ def plot_results():
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, "binary_label_distribution.png"))
 
+    plt.figure()
+    binary_percentages.plot(
+        kind="pie",
+        title="Binary Label Distribution (%)",
+        autopct="%1.2f%%",
+    )
+    plt.ylabel("")
+    plt.tight_layout()
+    plt.savefig(os.path.join(output_dir, "binary_label_pie.png"))
+
+    plt.figure()
     attack_distribution.plot(kind="bar", title="Attack Type Distribution")
     plt.xlabel("Label")
     plt.ylabel("Count")
